@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Seetara Excellence University</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+<body>
+
+<!-- SIDEBAR -->
+
+<div class="sidebar">
+
+<div class="logo">
+<h2>🎓 Seetara University</h2>
+</div>
+
+<ul>
+
+<li onclick="showSection('dashboard')">
+<i class="fas fa-chart-line"></i>
+Dashboard
+</li>
+
+<li onclick="showSection('students')">
+<i class="fas fa-user-graduate"></i>
+Students
+</li>
+
+<li onclick="showSection('teachers')">
+<i class="fas fa-chalkboard-teacher"></i>
+Teachers
+</li>
+
+<li onclick="showSection('courses')">
+<i class="fas fa-book"></i>
+Courses
+</li>
+
+<li onclick="showSection('enrollment')">
+<i class="fas fa-file-signature"></i>
+Enrollment
+</li>
+
+<li onclick="showSection('attendance')">
+<i class="fas fa-calendar-check"></i>
+Attendance
+</li>
+
+<li onclick="showSection('results')">
+<i class="fas fa-award"></i>
+Results
+</li>
+
+<li onclick="showSection('fees')">
+<i class="fas fa-money-bill-wave"></i>
+Fee Records
+</li>
+
+<li onclick="showSection('notices')">
+<i class="fas fa-bullhorn"></i>
+Notices
+</li>
+
+</ul>
+
+</div>
+
+<!-- MAIN CONTENT -->
+
+<div class="main-content">
+
+<header>
+
+<h1>Seetara Excellence University</h1>
+
+<div class="header-right">
+<button id="themeBtn">
+<i class="fas fa-moon"></i>
+</button>
+</div>
+
+</header>
+
+<!-- DASHBOARD -->
+
+<section id="dashboard" class="content-section">
+
+<h2>Dashboard Overview</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>Total Students</h3>
+<p id="studentCount">0</p>
+</div>
+
+<div class="card">
+<h3>Total Teachers</h3>
+<p id="teacherCount">0</p>
+</div>
+
+<div class="card">
+<h3>Total Courses</h3>
+<p id="courseCount">0</p>
+</div>
+
+<div class="card">
+<h3>Enrollments</h3>
+<p id="enrollmentCount">0</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- STUDENTS -->
+
+<section id="students" class="content-section">
+
+<h2>Student Registration</h2>
+
+<div class="form-box">
+
+<input type="text"
+id="studentName"
+placeholder="Student Name">
+
+<input type="text"
+id="studentRoll"
+placeholder="Roll Number">
+
+<input type="text"
+id="studentDepartment"
+placeholder="Department">
+
+<button onclick="addStudent()">
+Register Student
+</button>
+
+</div>
+
+<input type="text"
+id="studentSearch"
+placeholder="Search Student">
+
+<div id="studentList"></div>
+
+</section>
+
+<!-- TEACHERS -->
+
+<section id="teachers" class="content-section">
+
+<h2>Teacher Management</h2>
+
+<div class="form-box">
+
+<input type="text"
+id="teacherName"
+placeholder="Teacher Name">
+
+<input type="text"
+id="teacherSubject"
+placeholder="Subject">
+
+<button onclick="addTeacher()">
+Add Teacher
+</button>
+
+</div>
+
+<div id="teacherList"></div>
+
+</section>
+
+<!-- COURSES -->
+
+<section id="courses" class="content-section">
+
+<h2>Course Management</h2>
+
+<div class="form-box">
+
+<input type="text"
+id="courseName"
+placeholder="Course Name">
+
+<input type="text"
+id="courseCode"
+placeholder="Course Code">
+
+<button onclick="addCourse()">
+Add Course
+</button>
+
+</div>
+
+<div id="courseList"></div>
+
+</section>
+
+<!-- ENROLLMENT -->
+
+<section id="enrollment" class="content-section">
+
+<h2>Course Enrollment</h2>
+
+<div class="form-box">
+
+<input type="text"
+id="enrollStudent"
+placeholder="Student Name">
+
+<input type="text"
+id="enrollCourse"
+placeholder="Course Name">
+
+<button onclick="enrollStudent()">
+Enroll
+</button>
+
+</div>
+
+<div id="enrollmentList"></div>
+
+</section>
+
+<!-- ATTENDANCE -->
+
+<section id="attendance" class="content-section">
+
+<h2>Attendance System</h2>
+
+<div class="form-box">
+
+<input type="text"
+id="attendanceStudent"
+placeholder="Student Name">
+
+<select id="attendanceStatus">
+
+<option>Present</option>
+<option>Absent</option>
+
+</select>
+
+<button onclick="markAttendance()">
+Mark Attendance
+</button>
+
+</div>
+
+<div id="attendanceList"></div>
+
+</section>
+
+<!-- RESULTS -->
+
+<section id="results" class="content-section">
+
+<h2>Result Management</h2>
+
+<div class="form-box">
+
+<input type="text"
+id="resultStudent"
+placeholder="Student Name">
+
+<input type="text"
+id="resultGPA"
+placeholder="GPA">
+
+<button onclick="addResult()">
+Save Result
+</button>
+
+</div>
+
+<div id="resultList"></div>
+
+</section>
+
+<!-- FEES -->
+
+<section id="fees" class="content-section">
+
+<h2>Fee Records</h2>
+
+<div class="form-box">
+
+<input type="text"
+id="feeStudent"
+placeholder="Student Name">
+
+<input type="number"
+id="feeAmount"
+placeholder="Amount">
+
+<button onclick="addFee()">
+Add Fee Record
+</button>
+
+</div>
+
+<div id="feeList"></div>
+
+</section>
+
+<!-- NOTICES -->
+
+<section id="notices" class="content-section">
+
+<h2>University Notices</h2>
+
+<div class="form-box">
+
+<input type="text"
+id="noticeText"
+placeholder="Write Notice">
+
+<button onclick="addNotice()">
+Publish Notice
+</button>
+
+</div>
+
+<div id="noticeList"></div>
+
+</section>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+  </html>
