@@ -64,6 +64,27 @@ enrollments.length;
 
 // ---------- STUDENTS ----------
 
+if(teachers.length === 0){
+
+teachers = [
+{
+id:1,
+name:"Babar Akram",
+subject:"Web Development"
+},
+{
+id:2,
+name:"Uswa Nazish",
+subject:"Computer Science"
+}
+];
+
+localStorage.setItem(
+"teachers",
+JSON.stringify(teachers)
+);
+
+}
 function addStudent() {
 
 let name =
@@ -179,6 +200,27 @@ card.innerText.toLowerCase()
 });
 
 // ---------- TEACHERS ----------
+if(courses.length === 0){
+
+courses = [
+{
+id:1,
+name:"Web Development",
+code:"WD101"
+},
+{
+id:2,
+name:"Programming Fundamentals",
+code:"PF102"
+}
+];
+
+localStorage.setItem(
+"courses",
+JSON.stringify(courses)
+);
+
+}
 
 function addTeacher(){
 
@@ -243,6 +285,25 @@ list.innerHTML += `
 }
 
 // ---------- COURSES ----------
+if(results.length === 0){
+
+results = [
+{
+student:"Babar Akram",
+gpa:"3.80"
+},
+{
+student:"Uswa Nazish",
+gpa:"3.95"
+}
+];
+
+localStorage.setItem(
+"results",
+JSON.stringify(results)
+);
+
+}
 
 function addCourse(){
 
@@ -425,6 +486,25 @@ list.innerHTML += `
 }
 
 // ---------- RESULTS ----------
+if(attendance.length === 0){
+
+attendance = [
+{
+student:"Babar Akram",
+status:"Present"
+},
+{
+student:"Uswa Nazish",
+status:"Present"
+}
+];
+
+localStorage.setItem(
+"attendance",
+JSON.stringify(attendance)
+);
+
+}
 
 function addResult(){
 
@@ -541,6 +621,29 @@ list.innerHTML += `
 }
 
 // ---------- NOTICES ----------
+if(students.length === 0){
+
+students = [
+{
+id:1,
+name:"Babar Akram",
+roll:"SEU-001",
+dept:"Computer Science"
+},
+{
+id:2,
+name:"Uswa Nazish",
+roll:"SEU-002",
+dept:"Computer Science"
+}
+];
+
+localStorage.setItem(
+"students",
+JSON.stringify(students)
+);
+
+}
 
 function addNotice(){
 
